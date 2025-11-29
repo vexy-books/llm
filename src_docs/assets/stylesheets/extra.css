@@ -1,0 +1,11 @@
+/* Custom styles for your documentation */
+/* Uncomment extra_css in zensical.toml to enable */
+
+/* Example: Custom primary color */
+/*
+:root {
+  --md-primary-fg-color: #1a73e8;
+  --md-primary-fg-color--light: #4285f4;
+  --md-primary-fg-color--dark: #0d47a1;
+}
+*/

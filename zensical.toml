@@ -1,0 +1,157 @@
+# =============================================================================
+# Zensical Configuration
+# =============================================================================
+
+[project]
+
+# Site metadata
+site_name = "The Vexy Book of LLMs"
+site_description = "A comprehensive guide to large language models, APIs, Python packages, and practical applications"
+site_author = "Vexy Books"
+
+# Uncomment and set for production deployment
+#site_url = "https://yourusername.github.io/your-repo/"
+
+# Directory configuration
+docs_dir = "src_docs/md"
+site_dir = "docs"
+
+# Use directory URLs (index.html inside folders)
+use_directory_urls = true
+
+# Copyright notice (appears in footer)
+copyright = "Copyright &copy; 2025"
+
+# Navigation (optional - remove to auto-generate from directory structure)
+# nav = [
+#   { "Home" = "index.md" },
+#   { "Getting Started" = "getting-started.md" },
+# ]
+
+# -----------------------------------------------------------------------------
+# Theme Configuration
+# -----------------------------------------------------------------------------
+[project.theme]
+
+# Theme variant: "modern" (default) or "classic" (Material for MkDocs look)
+variant = "modern"
+language = "en"
+
+# Uncomment to use custom overrides directory
+#custom_dir = "overrides"
+
+# Feature flags
+features = [
+    "announce.dismiss",
+    "content.code.annotate",
+    "content.code.copy",
+    "content.code.select",
+    "content.footnote.tooltips",
+    "content.tabs.link",
+    "content.tooltips",
+    "header.autohide",
+    "navigation.expand",
+    "navigation.footer",
+    "navigation.indexes",
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.path",
+    "navigation.sections",
+    "navigation.top",
+    "navigation.tracking",
+    "search.highlight",
+    "toc.follow",
+    "toc.integrate"
+]
+
+# -----------------------------------------------------------------------------
+# Color Palette (light/dark mode toggle)
+# -----------------------------------------------------------------------------
+
+
+# Palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+palette = "orange"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+palette = "orange"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+# Uncomment to customize fonts
+#[project.theme.font]
+#text = "Inter"
+#code = "Jetbrains Mono"
+
+# Uncomment to customize logo/icons
+#[project.theme.icon]
+#logo = "lucide/book-open"
+
+# -----------------------------------------------------------------------------
+# Markdown Extensions
+# -----------------------------------------------------------------------------
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+
+[project.markdown_extensions.pymdownx.betterem]
+smart_enable = "all"
+
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+combine_header_slug = true
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[project.markdown_extensions.pymdownx.tilde]
+
+# -----------------------------------------------------------------------------
+# Extra Configuration (optional)
+# -----------------------------------------------------------------------------
+# Uncomment to add social links
+#[[project.extra.social]]
+#icon = "fontawesome/brands/github"
+#link = "https://github.com/username/repo"
