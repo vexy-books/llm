@@ -644,6 +644,82 @@ This gives you type safety, automatic retries on malformed output, and IDE autoc
 
 ---
 
+## Beyond Python: the Rust ecosystem
+
+Python dominates LLM development, but Rust is carving out important niches—especially for inference, vector databases, and performance-critical components.
+
+### Why Rust matters for LLMs
+
+- **Speed**: Rust inference can be 2-10x faster than Python equivalents
+- **Memory safety**: No garbage collection pauses during inference
+- **Deployment**: Single binaries, no dependency hell
+- **Interop**: Call Rust from Python via PyO3, best of both worlds
+
+### Key Rust packages
+
+**Inference engines:**
+
+| Package | Purpose |
+|---------|---------|
+| **candle** | Hugging Face's minimalist ML framework in Rust |
+| **mistral-rs** | Fast Mistral/Llama inference with quantization support |
+| **llm** | Run GGML-based models (Llama, GPT-J, etc.) |
+| **rllama** | Pure Rust LLaMA implementation, embeddable |
+
+**Tokenization:**
+
+| Package | Purpose |
+|---------|---------|
+| **tiktoken-rs** | OpenAI's BPE tokenizer, Rust-native |
+| **tokenizers** | Hugging Face tokenizers (has Rust core) |
+
+**Vector databases (Rust-powered):**
+
+| Package | Purpose |
+|---------|---------|
+| **qdrant** | Full-featured vector DB, production-ready |
+| **pgvecto.rs** | Postgres extension, 20x faster than pgvector |
+| **lancedb** | Embedded vector DB with Rust core |
+
+**Memory and retrieval:**
+
+| Package | Purpose |
+|---------|---------|
+| **memex** | In-memory document store + semantic search |
+| **indexify** | Retrieval and long-term memory service |
+
+### The Python-Rust bridge
+
+The best of both worlds: Python for orchestration, Rust for hot paths.
+
+```python
+# Many "Python" packages have Rust cores
+from tiktoken import encoding_for_model  # Rust tokenizer
+from qdrant_client import QdrantClient   # Rust vector DB
+from tokenizers import Tokenizer         # Rust tokenizers
+
+# PyO3 lets you write Python extensions in Rust
+# Your Python agent logic + Rust inference = fast and safe
+```
+
+### When to consider Rust
+
+**Use Rust when:**
+- Inference latency matters (sub-100ms requirements)
+- Deploying to resource-constrained environments
+- Building vector databases or search systems
+- You need predictable memory usage
+
+**Stick with Python when:**
+- Prototyping and exploration
+- Integration with ML ecosystem (PyTorch, Hugging Face)
+- Team doesn't know Rust
+- Flexibility matters more than raw speed
+
+The trend: Python for orchestration, Rust for infrastructure. Learn both, or at least know when to reach for each.
+
+---
+
 ## The takeaway
 
 Don't try to learn all 122 packages. Master the patterns, understand the categories, and pick one from each category you need.
