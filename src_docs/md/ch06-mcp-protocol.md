@@ -131,7 +131,7 @@ Let's build a minimal MCP server from scratch. This server provides one tool: ch
 # Create project
 mkdir font-checker-mcp && cd font-checker-mcp
 uv init
-uv add mcp
+uv add fastmcp
 ```
 
 ### The Server (FastMCP — recommended)
@@ -140,12 +140,12 @@ The `FastMCP` class provides a clean decorator-based API:
 
 ```python
 # server.py
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 from pathlib import Path
 
 mcp = FastMCP("font-checker")
 
-@mcp.tool()
+@mcp.tool
 def check_font(font_name: str) -> str:
     """Check if a font file exists in common locations."""
 
@@ -202,7 +202,7 @@ Let's build something useful. A font analysis server that extracts metadata from
 
 ```python
 # font_analyzer_server.py
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 from pathlib import Path
 from fontTools.ttLib import TTFont
 import json
@@ -234,7 +234,7 @@ def extract_metadata(font_path: Path) -> dict:
         "units_per_em": font['head'].unitsPerEm,
     }
 
-@mcp.tool()
+@mcp.tool
 def analyze_font(path: str) -> str:
     """Analyze a font file and return its metadata."""
     font_path = Path(path)
@@ -251,7 +251,7 @@ def analyze_font(path: str) -> str:
     except Exception as e:
         return f"Error analyzing font: {e}"
 
-@mcp.tool()
+@mcp.tool
 def compare_fonts(path1: str, path2: str) -> str:
     """Compare metadata between two font files."""
     try:

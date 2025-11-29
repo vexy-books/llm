@@ -426,7 +426,7 @@ Include:
 
 Format as Markdown."""
     )
-    return result.data.content
+    return result.output.content
 
 async def generate_api_docs(api_dir: str) -> str:
     """Generate OpenAPI documentation for an API."""
@@ -441,7 +441,7 @@ Include:
 
 Output as YAML."""
     )
-    return result.data.content
+    return result.output.content
 ```
 
 ## Step 4: keeping docs in sync
@@ -624,7 +624,7 @@ async def read(path: str) -> str:
 async def ask_about_code(question: str) -> CodeQuestion:
     """Ask a question about the codebase."""
     result = await qa_agent.run(question)
-    return result.data
+    return result.output
 
 # Example
 answer = await ask_about_code("How does the authentication system handle expired tokens?")
