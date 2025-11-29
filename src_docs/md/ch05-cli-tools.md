@@ -32,20 +32,24 @@ Three major providers bundle CLI tools with their platforms. These aren't neutra
 ### Codex CLI (OpenAI)
 
 **Language**: Rust
-**Open Source**: Yes
-**Models**: GPT-4o, GPT-5, o1/o3
-**Bundled With**: ChatGPT Plus ($20/mo), ChatGPT Pro ($200/mo)
+**Open Source**: Yes (npm: `@openai/codex`)
+**Models**: GPT-5, GPT-5.1, GPT-5-Codex-Mini, GPT-5.1-Codex-Max
+**Bundled With**: ChatGPT Plus ($20/mo), Pro ($200/mo), Business, Edu, Enterprise
 
-OpenAI's official agent. Originally called just "CLI", rebranded to Codex to avoid confusion.
+OpenAI's official agentic CLI, significantly upgraded in November 2025.
 
 **Key Features**:
-- Sandbox code execution (Docker-based)
-- OpenAI-compatible provider switching (works with Cerebras, Groq, etc.)
-- Extensible plugin system
-- File operations with safety checks
-- Git integration
+- Sandbox code execution (Docker-based, 90% faster with container caching)
+- **Three approval modes**: Suggest (safe), Auto Edit, Full Access
+- MCP integration for external tools
+- Web search and image attachment support
+- Conversation resumption across sessions
+- Quiet mode (`-q`) for CI/CD automation
+- IDE extension for VS Code/Cursor
 
-**Default behavior**: Prompts for permission before file operations. Configurable trust levels.
+**Latest models** (November 2025):
+- **GPT-5.1-Codex-Max**: Frontier agentic model for project-scale work
+- **GPT-5-Codex-Mini**: Compact, cost-efficient option
 
 ```bash
 # Basic usage
@@ -56,9 +60,12 @@ codex --files src/**/*.ts "Refactor to use named exports"
 
 # Provider switching
 codex --provider cerebras/qwen-3-coder "Generate unit tests"
+
+# Quiet mode for CI/CD
+CODEX_QUIET_MODE=1 codex "Fix lint errors in src/"
 ```
 
-**When Codex shines**: You're in the OpenAI ecosystem, writing code interactively, and want sandbox safety.
+**When Codex shines**: You're in the OpenAI ecosystem, need project-scale refactoring, or want CI/CD integration.
 
 **When Codex struggles**: You need RAG over large document sets. You want minimal dependencies.
 
@@ -66,7 +73,7 @@ codex --provider cerebras/qwen-3-coder "Generate unit tests"
 
 **Language**: TypeScript
 **Open Source**: No (proprietary)
-**Models**: Claude 4 Sonnet, Claude 4 Opus
+**Models**: Claude Sonnet 4.5, Claude Opus 4.5
 **Bundled With**: Claude Pro ($20/mo), Max plans ($100-200/mo)
 
 Anthropic's agentic CLI. The most opinionated of the three.
