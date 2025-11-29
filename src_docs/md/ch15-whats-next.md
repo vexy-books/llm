@@ -292,7 +292,7 @@ class ModelRegistry:
         self.models = {
             # Update this quarterly as models change
             "gpt-5-mini": {"cost": 0.0015, "quality": 0.85, "speed": "fast"},
-            "claude-haiku-4-5": {"cost": 0.00075, "quality": 0.83, "speed": "fast"},
+            "claude-3-5-haiku": {"cost": 0.00075, "quality": 0.83, "speed": "fast"},
             "gpt-5": {"cost": 0.025, "quality": 0.95, "speed": "medium"},
             "claude-sonnet-4-5": {"cost": 0.015, "quality": 0.94, "speed": "medium"},
         }
