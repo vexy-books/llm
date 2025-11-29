@@ -76,9 +76,9 @@
 
 - [x] Apply prose rules to all chapters (sentence case verified)
 - [ ] Test all code examples
-- [x] Add image placeholders (16 total confirmed)
+- [x] Add image placeholders (24 chapters, all have images)
 - [x] Review narrative thread consistency (typography theme throughout)
-- [ ] Cross-reference accuracy check
+- [x] Cross-reference accuracy check (Ch 5-10 links verified)
 - [x] Update zensical.toml with book metadata
 
 ## Phase 6: Deploy [x] Complete

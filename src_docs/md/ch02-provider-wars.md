@@ -27,10 +27,11 @@ OpenAI invented the consumer AI market with ChatGPT. That first-mover advantage 
 
 **The Models**
 
-- **GPT-4o**: The workhorse. Handles text, images, and audio in a single model. $2.50 per million input tokens, $10 per million output. Fast enough for real-time applications.
-- **GPT-4.1**: Extended context (up to 1M tokens) at lower cost than GPT-4o. Optimized for long documents.
-- **o1 / o3**: Reasoning models that "think" before responding. Slower but more accurate for complex problems. o3 costs $10/$40 per million tokens—expensive, but worth it when you need the extra reasoning.
-- **GPT-5**: The latest frontier model. Available through ChatGPT Pro ($200/month) for unlimited access.
+- **GPT-5**: The flagship, released August 2025. Adaptive design that switches between quick responses and deeper thinking. Available to all ChatGPT users with tiered capabilities.
+- **GPT-5.1**: Released November 2025. Smarter and more conversational, with improved reasoning and customization options.
+- **GPT-5 Pro**: Extended reasoning mode for complex tasks. Achieves state-of-the-art on GPQA and other benchmarks.
+- **GPT-4o**: The workhorse. Handles text, images, and audio. $2.50/$10 per million tokens. Still excellent for most tasks.
+- **GPT-5-Codex-Max**: Frontier agentic coding model for long-running, project-scale work (Nov 2025).
 
 **Subscription Tiers**
 
@@ -62,9 +63,10 @@ Anthropic was founded by ex-OpenAI researchers focused on AI safety. That focus 
 
 **The Models**
 
-- **Claude 4 Sonnet**: The balanced choice. Fast, capable, cost-effective at $3/$15 per million tokens.
-- **Claude 4 Opus**: The reasoning champion. Handles 7+ hour autonomous tasks. Excels at extended context work. $15/$75 per million tokens—premium pricing for premium capability.
-- **Claude 3.5 Haiku**: Speed-optimized. Great for high-volume, lower-complexity tasks.
+- **Claude Opus 4.5**: The latest flagship (November 2025). Best model for coding, agents, and complex reasoning. $15/$75 per million tokens.
+- **Claude Sonnet 4.5**: Released September 2025. 77.2% on SWE-bench with enhanced agentic features. $3/$15 per million tokens.
+- **Claude Haiku 4.5**: Released October 2025. 73.3% on SWE-bench. Ideal for parallelized execution and sub-agent tasks.
+- **Claude 4 Sonnet/Opus**: Previous generation, still excellent and slightly cheaper.
 
 **Subscription Tiers**
 
@@ -98,9 +100,17 @@ Google's advantage is infrastructure and data. They process more information tha
 
 **The Models**
 
-- **Gemini 2.5 Pro**: The flagship. 1 million token context, native multimodal (text, images, video, audio), web grounding. $1.25-2.50/$10-15 per million tokens depending on context length.
+- **Gemini 2.5 Pro**: The flagship. 1M token context (2M coming soon), native multimodal (text, images, video, audio, code repositories). Tops the LMArena leaderboard. 63.8% on SWE-bench Verified. $1.25-2.50/$10-15 per million tokens depending on context length.
 - **Gemini 2.5 Flash**: Speed-optimized variant. Same capabilities, faster responses.
 - **Gemini 2.0 Flash-Lite**: Budget option for high-volume workloads.
+
+**Subscription Tiers (Google AI)**
+
+| Plan | Price/month | What You Get |
+|------|-------------|--------------|
+| Free | $0 | Limited Gemini 2.5 Pro access |
+| AI Pro | $20 | 250 prompts/day, 250 Nano Banana Pro images, 2TB storage |
+| AI Ultra | ~$250 | Max limits, 30TB storage, YouTube Premium, Veo 3 video, Project Mariner browser automation |
 
 **Subscription Tiers (Code Assist)**
 
@@ -135,8 +145,9 @@ Elon Musk's xAI built Grok specifically for real-time information. Integrated wi
 
 **The Models**
 
+- **Grok-4.1**: Released November 2025. Latest incremental update with improved capabilities.
 - **Grok-4**: The standard model. Competitive with GPT-4o on benchmarks.
-- **Grok-4 Heavy**: Extended reasoning. Competes with o1/o3.
+- **Grok-3**: Released February 2025. Trained with 10x more compute using the 200,000 GPU Colossus data center.
 
 **Subscription Tiers**
 
@@ -287,10 +298,11 @@ The key insight: no single provider wins on every dimension. Architect for resil
 | Priority | Best Choice | Runner-Up |
 |----------|-------------|-----------|
 | **Best Free Tier** | Google Gemini | Perplexity |
-| **Best Reasoning** | Claude Opus | OpenAI o3 |
+| **Best Reasoning** | Claude Opus 4.5 | GPT-5 Pro |
 | **Best Speed** | Cerebras | Groq |
-| **Best Multimodal** | Google Gemini | GPT-4o |
-| **Best Real-Time** | Grok | Perplexity |
+| **Best Multimodal** | Gemini 2.5 Pro | GPT-5 |
+| **Best Real-Time** | Grok-4.1 | Perplexity |
+| **Best Coding** | Claude Sonnet 4.5 (77.2% SWE-bench) | Gemini 2.5 Pro (63.8%) |
 | **Best Value** | Featherless ($25 unlimited) | Chutes ($20/5k/day) |
 | **Best Enterprise** | OpenAI/Azure | Google Cloud |
 
