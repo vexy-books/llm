@@ -15,6 +15,9 @@
 
 ## Recent Updates
 
+- [x] Fixed ch04 PydanticAI attribution (Pydantic team, not Anthropic)
+- [x] Verified ch07 vector database APIs current (Pinecone, Qdrant, Chroma)
+- [x] Verified ch08 embedding model info accurate (gemini-embedding-001, MTEB scores)
 - [x] Updated Gemini models across all chapters: Gemini 3 Pro (flagship) + Gemini 2.5 Flash (speed)
 - [x] Updated ch13 subscription model names (GPT-5, Claude 4.5, o3-Pro)
 - [x] Updated ch15 trends with current models and shipped features (Operator, computer use)
@@ -25,8 +28,6 @@
 - [x] Updated ch02 provider info with Nov 2025 releases
 - [x] Updated ch09 PydanticAI code: `result.data` → `result.output`
 - [x] Added "Debugging agents in practice" section to ch09
-- [x] Added JS/TS ecosystem section to ch04
-- [x] Added "Further reading" section with citations to ch16
 
 ## Next Actions
 
