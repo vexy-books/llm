@@ -471,7 +471,7 @@ async def identify_font(query: str, image_path: str | None = None) -> FontIdenti
         query = f"Identify the font in this image: {image_path}\n\nUser context: {query}"
 
     result = await detective.run(query)
-    return result.data
+    return result.output
 
 # Text-based query
 result = await identify_font(
@@ -678,7 +678,7 @@ async def identify(query: str, image: str | None = None) -> FontIdentification:
     if image:
         query = f"Image analysis: {analyze_image(image)}\n\nContext: {query}"
     result = await detective.run(query)
-    return result.data
+    return result.output
 ```
 
 ## Getting started: two approaches

@@ -632,7 +632,7 @@ font_agent = Agent(
 async def analyze_font(font_name: str) -> FontAnalysis:
     """Get validated, structured font analysis."""
     result = await font_agent.run(f"Analyze the font: {font_name}")
-    return result.data  # Guaranteed to be valid FontAnalysis
+    return result.output  # Guaranteed to be valid FontAnalysis
 
 # Usage
 analysis = await analyze_font("Helvetica")

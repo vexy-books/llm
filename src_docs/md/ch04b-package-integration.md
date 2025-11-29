@@ -113,17 +113,17 @@ reviewer = Agent(
 # Define nodes
 async def research_node(state: WorkflowState) -> WorkflowState:
     result = await researcher.run(state["query"])
-    return {"research": result.data}
+    return {"research": result.output}
 
 async def analyze_node(state: WorkflowState) -> WorkflowState:
     prompt = f"Analyze this research:\n{state['research']}"
     result = await analyst.run(prompt)
-    return {"analysis": result.data}
+    return {"analysis": result.output}
 
 async def review_node(state: WorkflowState) -> WorkflowState:
     prompt = f"Is this analysis sufficient?\n{state['analysis']}"
     result = await reviewer.run(prompt)
-    needs_more = "needs_more" in result.data.lower()
+    needs_more = "needs_more" in result.output.lower()
     return {"needs_more_research": needs_more}
 
 async def synthesize_node(state: WorkflowState) -> WorkflowState:
@@ -462,11 +462,11 @@ async def chat_with_memory(user_id: str, message: str) -> str:
 
     # Store new memories from conversation
     memory.add(
-        f"User said: {message}\nAssistant replied: {result.data}",
+        f"User said: {message}\nAssistant replied: {result.output}",
         user_id=user_id
     )
 
-    return result.data
+    return result.output
 
 # Session 1
 await chat_with_memory("user123", "I prefer sans-serif fonts for body text")

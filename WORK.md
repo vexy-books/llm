@@ -15,6 +15,7 @@
 
 ## Recent Updates
 
+- [x] Fixed remaining PydanticAI `result.data` → `result.output` across 6 chapters (ch04, ch04b, ch09, ch09b, ch10, ch12b)
 - [x] Updated GPT-4/GPT-4o references to GPT-5/GPT-5-mini across 11 chapters (ch02, ch03, ch04b, ch05, ch07b, ch08, ch08b, ch09, ch09b, ch10, ch15)
 - [x] Updated ch06 FastMCP imports: `from mcp.server.fastmcp` → `from fastmcp` (FastMCP 2.0)
 - [x] Updated ch06 setup: `uv add mcp` → `uv add fastmcp`

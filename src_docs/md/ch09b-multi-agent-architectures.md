@@ -119,7 +119,7 @@ Be specific about problems and suggested fixes."""
         plan_result = await self.orchestrator.run(
             f"Create a plan to accomplish: {task}"
         )
-        plan = plan_result.data
+        plan = plan_result.output
 
         # Step 2: Execute steps respecting dependencies
         results = {}
@@ -169,7 +169,7 @@ Prior context:
 Complete this task and report your results."""
 
         result = await worker.run(prompt)
-        return result.data
+        return result.output
 
 # Usage
 system = OrchestratorSystem()
@@ -455,12 +455,12 @@ class BlackboardAgent:
         # Write results back
         await self.blackboard.write(
             author=self.name,
-            entry_type=result.data.entry_type,
-            content=result.data.content,
-            confidence=result.data.confidence
+            entry_type=result.output.entry_type,
+            content=result.output.content,
+            confidence=result.output.confidence
         )
 
-        return result.data
+        return result.output
 
     def _build_context(self) -> str:
         recent = self.blackboard.entries[-20:]  # Last 20 entries
@@ -689,9 +689,9 @@ class TracedAgent:
 
         try:
             result = await self.agent.run(prompt)
-            span.log("output", {"result": str(result.data)[:500]})
-            span.end(status="ok", result=result.data)
-            return result.data
+            span.log("output", {"result": str(result.output)[:500]})
+            span.end(status="ok", result=result.output)
+            return result.output
         except Exception as e:
             span.log("error", {"exception": str(e)})
             span.end(status="error")

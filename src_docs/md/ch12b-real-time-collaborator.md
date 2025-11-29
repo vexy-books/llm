@@ -489,7 +489,7 @@ Design goal: {goal}
 Suggest a single modification to move toward this goal."""
 
         result = await self.agent.run(prompt)
-        return result.data
+        return result.output
 
     async def apply_suggestion(self, suggestion: FontEditSuggestion):
         """Apply a suggestion to the font."""

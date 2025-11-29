@@ -1019,7 +1019,7 @@ Provide structured recommendations with clear rationale."""
         result = await self.agent.run(
             f"Recommend fonts for: {use_case}"
         )
-        return result.data
+        return result.output
 
 # Usage
 async def main():
