@@ -32,17 +32,17 @@ Most people pick based on brand familiarity or feature lists they'll never use. 
 ### ChatGPT Plus ($20/month)
 
 **What you get:**
-- GPT-4o access (higher rate limits than free)
-- GPT-4o with Canvas (collaborative editing)
+- GPT-5 access (higher rate limits than free)
+- GPT-5 with Canvas (collaborative editing)
 - Advanced Data Analysis (code execution)
 - DALL-E 3 image generation
 - Custom GPTs (create and use)
 - Browse with Bing
-- Voice mode with GPT-4o
+- Voice mode with GPT-5
 - Priority access during high demand
 
 **Rate limits:**
-- GPT-4o: ~80 messages/3 hours
+- GPT-5: ~80 messages/3 hours
 - DALL-E 3: ~50 images/day
 - Advanced Data Analysis: Session-based
 
@@ -54,13 +54,13 @@ Most people pick based on brand familiarity or feature lists they'll never use. 
 **Limitations:**
 - No API access included
 - Limits are soft (can be throttled during demand spikes)
-- Can't use GPT-4 Turbo via chat interface
+- Pro tier ($200/mo) required for GPT-5 Pro reasoning
 
 ### Claude Pro ($20/month)
 
 **What you get:**
-- Claude 3.5 Sonnet (higher limits)
-- Claude 3 Opus (when selected)
+- Claude Sonnet 4.5 (higher limits)
+- Claude Opus 4.5 (when selected)
 - 5x more usage than free tier
 - Priority access during peak times
 - Projects (organize conversations)
@@ -86,7 +86,7 @@ Most people pick based on brand familiarity or feature lists they'll never use. 
 ### Google Gemini Advanced ($19.99/month via Google One AI Premium)
 
 **What you get:**
-- Gemini 1.5 Pro (1M token context)
+- Gemini 3 Pro (1M token context)
 - Gemini in Gmail, Docs, Sheets, Slides
 - Deep Research feature
 - Gems (custom Gemini personalities)
@@ -104,7 +104,7 @@ Most people pick based on brand familiarity or feature lists they'll never use. 
 - Users already paying for Google One
 
 **Limitations:**
-- Quality inconsistency vs GPT-4o/Claude
+- Quality inconsistency vs GPT-5/Claude
 - Deep integration means deep lock-in
 - Image generation via Imagen (limited)
 
@@ -113,7 +113,7 @@ Most people pick based on brand familiarity or feature lists they'll never use. 
 | Feature | ChatGPT Plus | Claude Pro | Gemini Advanced |
 |---------|--------------|------------|-----------------|
 | **Price** | $20/mo | $20/mo | $19.99/mo |
-| **Best Model** | GPT-4o | Claude 3.5 Sonnet | Gemini 1.5 Pro |
+| **Best Model** | GPT-5 | Claude Sonnet 4.5 | Gemini 3 Pro |
 | **Context Window** | 128K | 200K | 1M |
 | **Image Gen** | DALL-E 3 | No | Imagen |
 | **Code Execution** | Yes | No | Yes |
@@ -129,12 +129,12 @@ Most people pick based on brand familiarity or feature lists they'll never use. 
 
 **Value proposition**: Everything in one place.
 
-GPT-4o handles most tasks adequately. Add DALL-E 3, code execution, and web browsing, and you have a complete toolkit. For users who want one subscription that does everything, ChatGPT Plus delivers.
+GPT-5 handles most tasks capably. Add DALL-E 3, code execution, and web browsing, and you have a complete toolkit. For users who want one subscription that does everything, ChatGPT Plus delivers.
 
 **ROI calculation:**
 - DALL-E 3 alone costs $0.04-0.12/image via API
 - 50 images/month = $2-6 API equivalent
-- GPT-4o API: $2.50/1M input, $10/1M output
+- GPT-5 API: $2.50/1M input, $10/1M output
 - Average chat session ~2K tokens = ~$0.02
 - 80 sessions/day × 30 days = 2,400 sessions = ~$48 API equivalent
 
@@ -147,7 +147,7 @@ GPT-4o handles most tasks adequately. Add DALL-E 3, code execution, and web brow
 Claude excels at nuanced writing, careful analysis, and long-context work. The 200K context window (free tier gets 200K too, but with usage limits) handles entire codebases and long documents.
 
 **ROI calculation:**
-- Claude 3.5 Sonnet API: $3/1M input, $15/1M output
+- Claude Sonnet 4.5 API: $3/1M input, $15/1M output
 - Average session ~3K tokens = ~$0.05
 - 100 sessions/day = $5/day = $150/month API equivalent
 - 5x free tier = ~$30-50 value
@@ -162,7 +162,7 @@ The 2TB storage alone costs $9.99/month. Gemini integration across Google Worksp
 
 **ROI calculation:**
 - Google One 2TB: $9.99/month
-- Gemini 1.5 Pro API: $1.25/1M input (up to 128K), higher for longer
+- Gemini 3 Pro API: $1.25/1M input (up to 128K), higher for longer
 - 1M context operations via API: expensive
 - Workspace integration: priceless if you're in the ecosystem
 
@@ -174,7 +174,7 @@ For those who hit limits constantly, premium tiers emerged in 2025:
 
 ### ChatGPT Pro ($200/month)
 
-- Unlimited GPT-4o and o1-Pro access
+- Unlimited GPT-5 and o3-Pro access
 - Extended thinking mode without quotas
 - Operator (autonomous browser agent)
 - Codex agent for coding tasks
@@ -186,7 +186,7 @@ For those who hit limits constantly, premium tiers emerged in 2025:
 ### Claude Max ($100-200/month)
 
 - **Max 5x** ($100/mo): 5x Pro rate limits
-- **Max 20x** ($200/mo): 20x Pro rate limits, Claude 4.1 Opus access
+- **Max 20x** ($200/mo): 20x Pro rate limits, Claude Opus 4.5 access
 - Extended output limits
 - Early access to new features
 - Highest priority during peak times
@@ -248,8 +248,8 @@ Sometimes the API is cheaper. Sometimes it's not.
 - Claude Pro subscription: $0.67/day
 
 **Specific model access**:
-- Need GPT-4 Turbo specifically? API only.
-- Need Claude 3 Opus without rate limits? API.
+- Need a specific model version? API only.
+- Need Claude Opus 4.5 without rate limits? API.
 
 **Automation**:
 - Building products? You need the API anyway.
@@ -292,8 +292,8 @@ Before subscribing, exhaust the free options:
 | Provider | Free Offering |
 |----------|--------------|
 | **Claude** | Limited Sonnet, web only |
-| **ChatGPT** | GPT-4o mini, limited features |
-| **Gemini** | Gemini 1.5 Flash, generous limits |
+| **ChatGPT** | GPT-5 mini, limited features |
+| **Gemini** | Gemini 2.5 Flash, generous limits |
 | **Mistral (Le Chat)** | Multiple models, good limits |
 | **Perplexity** | 5 Pro searches/day |
 
@@ -312,7 +312,7 @@ Beyond the big three:
 
 ### Perplexity Pro ($20/month)
 
-- Unlimited Pro searches (uses Claude/GPT-4)
+- Unlimited Pro searches (uses Claude/GPT-5)
 - File analysis
 - Focus modes (Academic, YouTube, Reddit)
 - API credits included
@@ -339,7 +339,7 @@ Beyond the big three:
 ### Cursor Pro ($20/month)
 
 - AI-powered IDE
-- Claude/GPT-4 integration
+- Claude/GPT-5 integration
 - Codebase-aware completions
 - Multi-file editing
 
