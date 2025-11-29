@@ -720,6 +720,81 @@ The trend: Python for orchestration, Rust for infrastructure. Learn both, or at 
 
 ---
 
+## Beyond Python: the JavaScript/TypeScript ecosystem
+
+If your stack is Node.js, Next.js, or browser-based, you don't need Python at all. The JavaScript/TypeScript LLM ecosystem matured significantly in 2025.
+
+### The big three
+
+| Library | Best for | Trade-offs |
+|---------|----------|------------|
+| **Vercel AI SDK** | Modern web apps, Next.js | Cleanest DX, some Vercel lock-in |
+| **LangChain.js** | Complex multi-step chains | Steeper learning curve |
+| **OpenAI Node SDK** | Direct API access | OpenAI-only, but simplest |
+
+### Vercel AI SDK
+
+The modern choice. Minimal boilerplate, excellent TypeScript support, works with multiple providers.
+
+```typescript
+import { generateText } from 'ai'
+import { anthropic } from '@ai-sdk/anthropic'
+
+const result = await generateText({
+  model: anthropic('claude-sonnet-4-20250514'),
+  system: "You are a typography expert.",
+  prompt: "What makes Helvetica so ubiquitous?",
+})
+
+console.log(result.text)
+```
+
+Streaming, tool calling, and structured output all work out of the box. If you're building React or Next.js apps, start here.
+
+### LangChain.js
+
+The JavaScript port of LangChain. Same patterns, same abstractions, different runtime.
+
+```typescript
+import { ChatOpenAI } from "@langchain/openai"
+import { HumanMessage } from "@langchain/core/messages"
+
+const model = new ChatOpenAI({ model: "gpt-4o" })
+const response = await model.invoke([
+  new HumanMessage("Analyze the kerning in this font specimen")
+])
+```
+
+More verbose than Vercel AI SDK, but familiar if you've used Python LangChain. Good for porting existing workflows.
+
+### When to use JavaScript/TypeScript
+
+**Use JS/TS when:**
+- Building web applications (React, Next.js, Vue)
+- Your team is JavaScript-native
+- You need browser-side inference (with WebLLM or transformers.js)
+- Serverless deployment (Vercel, Cloudflare Workers)
+
+**Stick with Python when:**
+- Heavy data processing or ML training
+- Need the full ecosystem (PyTorch, Hugging Face)
+- Building CLI tools or scripts
+- Team already knows Python
+
+### The polyglot approach
+
+Many production systems mix languages:
+
+```
+Frontend (Next.js) → Vercel AI SDK for UI streaming
+Backend (Python)   → PydanticAI for complex agents
+Infrastructure     → Rust for vector search (Qdrant)
+```
+
+Pick the right tool for each layer. The APIs speak JSON—languages don't need to match.
+
+---
+
 ## The takeaway
 
 Don't try to learn all 122 packages. Master the patterns, understand the categories, and pick one from each category you need.

@@ -210,4 +210,29 @@ Understanding the machine doesn't make it less useful. It makes you better at us
 
 ---
 
+## Further reading
+
+Want to go deeper? These sources explain the technical foundations without requiring a PhD:
+
+**The original papers:**
+- "Attention Is All You Need" (Vaswani et al., 2017) — The transformer paper that started it all. Readable if you skip the math.
+- "Language Models are Few-Shot Learners" (Brown et al., 2020) — The GPT-3 paper that introduced emergent capabilities.
+
+**Accessible explanations:**
+- 3Blue1Brown's "Neural Networks" YouTube series — Visual intuitions for how neural networks learn.
+- Jay Alammar's "The Illustrated Transformer" — The clearest visual walkthrough of attention mechanisms.
+- Andrej Karpathy's "Let's Build GPT from Scratch" — A 2-hour video building a small language model in Python.
+
+**Critical perspectives:**
+- "On the Dangers of Stochastic Parrots" (Bender et al., 2021) — The limitations and risks of large language models.
+- "Sparks of Artificial General Intelligence" (Microsoft Research, 2023) — A careful examination of GPT-4's capabilities.
+
+**Books:**
+- *Build a Large Language Model (From Scratch)* by Sebastian Raschka — Implement a GPT-style model to understand every component.
+- *Natural Language Processing with Transformers* by Tunstall, von Werra, and Wolf — The Hugging Face team's practical guide.
+
+The field moves fast. By the time you read this, new architectures will have emerged. But the fundamentals—attention, embeddings, autoregressive prediction—remain the foundation everything builds on.
+
+---
+
 *Next: Chapter 17 examines the ethics of AI-assisted creation—when the machine becomes collaborator.*

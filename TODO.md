@@ -81,12 +81,12 @@
 - [ ] Cross-reference accuracy check
 - [x] Update zensical.toml with book metadata
 
-## Phase 6: Deploy
+## Phase 6: Deploy [x] Complete
 
 - [x] Configure GitHub Actions (docs.yml exists)
-- [ ] Build with Zensical (requires installation)
-- [ ] Deploy to GitHub Pages (triggered on push to main)
-- [ ] Final review on live site
+- [x] Build with Zensical (GitHub Actions builds automatically)
+- [x] Deploy to GitHub Pages (live at https://vexy.boo/llm/)
+- [x] Final review on live site
 
 ## Phase 7: 2nd Edition
 
