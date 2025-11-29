@@ -37,7 +37,7 @@ The sommelier's skill is hard-won. Embeddings are trained on billions of text pa
 
 The embedding market commoditized faster than anyone expected. Quality went up, prices crashed.
 
-### The Complete Landscape (October 2025)
+### The complete landscape (late 2025)
 
 | Provider | Model | Price/M | MTEB Score | Dims | Free Tier |
 |----------|-------|---------|------------|------|-----------|

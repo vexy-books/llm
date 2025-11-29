@@ -7,7 +7,7 @@
 
 ## The knowledge cutoff problem
 
-Every LLM has a knowledge cutoff date. Ask GPT-4 about TypeScript 5.3 features released after its training, and it'll confidently hallucinate. Ask Claude about your company's internal documentation, and it has nothing to say.
+Every LLM has a knowledge cutoff date. Ask GPT-5 about events after its training, and it'll confidently hallucinate. Ask Claude about your company's internal documentation, and it has nothing to say.
 
 RAG (Retrieval-Augmented Generation) solves this by injecting relevant context at query time. Instead of relying solely on trained weights, the model receives external information alongside your question.
 
@@ -73,7 +73,7 @@ def basic_rag(query: str, k: int = 5) -> str:
 
     # 4. Generate with context
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-5",
         messages=[
             {"role": "system", "content": f"Use this context:\n{context}"},
             {"role": "user", "content": query}
@@ -491,7 +491,7 @@ For a production RAG system handling 200 requests/minute:
 | Web search (optional) | $5-50 |
 | **Total** | ~$4,000/mo |
 
-**LLM costs dominate.** Optimizing your vector database won't matter if you're burning money on GPT-4 calls.
+**LLM costs dominate.** Optimizing your vector database won't matter if you're burning money on GPT-5 calls.
 
 ### Cost Optimization
 

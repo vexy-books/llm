@@ -319,7 +319,7 @@ class FontMetadata(BaseModel):
 
 client = from_openai(openai.Client())
 font = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-5",
     response_model=FontMetadata,
     messages=[{"role": "user", "content": "Analyze Garamond"}]
 )
@@ -357,7 +357,7 @@ Testing framework for prompts. A/B testing, evaluation metrics.
 Microsoft's prompt asset format. Portable prompts across tools.
 
 ### PydanticAI
-**Anthropic's agent framework.** Type-safe, Pydantic-native, production-ready.
+**Pydantic team's agent framework.** Type-safe, Pydantic-native, production-ready.
 
 - Strong typing throughout
 - Dependency injection for context
@@ -510,7 +510,7 @@ Microsoft's prompt engineering and testing tool. Visual workflow for prompt iter
 prompts:
   - "Extract font metadata: {{input}}"
 providers:
-  - openai:gpt-4o
+  - openai:gpt-5
   - anthropic:claude-sonnet-4
 tests:
   - vars:
@@ -759,7 +759,7 @@ The JavaScript port of LangChain. Same patterns, same abstractions, different ru
 import { ChatOpenAI } from "@langchain/openai"
 import { HumanMessage } from "@langchain/core/messages"
 
-const model = new ChatOpenAI({ model: "gpt-4o" })
+const model = new ChatOpenAI({ model: "gpt-5" })
 const response = await model.invoke([
   new HumanMessage("Analyze the kerning in this font specimen")
 ])
