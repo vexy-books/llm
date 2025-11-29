@@ -134,21 +134,21 @@ uv init
 uv add mcp
 ```
 
-### The Server
+### The Server (FastMCP — recommended)
+
+The `FastMCP` class provides a clean decorator-based API:
 
 ```python
 # server.py
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
+from mcp.server.fastmcp import FastMCP
 from pathlib import Path
 
-server = Server("font-checker")
+mcp = FastMCP("font-checker")
 
-@server.tool("check_font")
-async def check_font(font_name: str) -> str:
+@mcp.tool()
+def check_font(font_name: str) -> str:
     """Check if a font file exists in common locations."""
 
-    # Common font directories (macOS example)
     font_dirs = [
         Path.home() / "Library/Fonts",
         Path("/Library/Fonts"),
@@ -156,25 +156,18 @@ async def check_font(font_name: str) -> str:
     ]
 
     for dir in font_dirs:
-        for ext in [".ttf", ".otf", ".ttc", ".woff", ".woff2"]:
+        for ext in [".ttf", ".otf", ".ttc"]:
             font_path = dir / f"{font_name}{ext}"
             if font_path.exists():
                 return f"Found: {font_path}"
 
     return f"Font '{font_name}' not found in system directories."
 
-async def main():
-    async with stdio_server() as (read_stream, write_stream):
-        await server.run(
-            read_stream,
-            write_stream,
-            server.create_initialization_options()
-        )
-
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    mcp.run()
 ```
+
+That's it—FastMCP handles all the JSON-RPC boilerplate. Tools are just functions with docstrings.
 
 ### Running the Server
 
@@ -209,13 +202,12 @@ Let's build something useful. A font analysis server that extracts metadata from
 
 ```python
 # font_analyzer_server.py
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
+from mcp.server.fastmcp import FastMCP
 from pathlib import Path
 from fontTools.ttLib import TTFont
 import json
 
-server = Server("font-analyzer")
+mcp = FastMCP("font-analyzer")
 
 def extract_metadata(font_path: Path) -> dict:
     """Extract metadata from a font file."""
@@ -242,8 +234,8 @@ def extract_metadata(font_path: Path) -> dict:
         "units_per_em": font['head'].unitsPerEm,
     }
 
-@server.tool("analyze_font")
-async def analyze_font(path: str) -> str:
+@mcp.tool()
+def analyze_font(path: str) -> str:
     """Analyze a font file and return its metadata."""
     font_path = Path(path)
 
@@ -259,8 +251,8 @@ async def analyze_font(path: str) -> str:
     except Exception as e:
         return f"Error analyzing font: {e}"
 
-@server.tool("compare_fonts")
-async def compare_fonts(path1: str, path2: str) -> str:
+@mcp.tool()
+def compare_fonts(path1: str, path2: str) -> str:
     """Compare metadata between two font files."""
     try:
         meta1 = extract_metadata(Path(path1))
@@ -283,8 +275,8 @@ async def compare_fonts(path1: str, path2: str) -> str:
     except Exception as e:
         return f"Error comparing fonts: {e}"
 
-@server.resource("font://system/list")
-async def list_system_fonts() -> str:
+@mcp.resource("font://system/list")
+def list_system_fonts() -> str:
     """List all installed system fonts."""
     fonts = []
     for dir in [
@@ -296,17 +288,8 @@ async def list_system_fonts() -> str:
                 fonts.append(str(font))
     return json.dumps(fonts)
 
-async def main():
-    async with stdio_server() as (read_stream, write_stream):
-        await server.run(
-            read_stream,
-            write_stream,
-            server.create_initialization_options()
-        )
-
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    mcp.run()
 ```
 
 ### Using the Font Analyzer

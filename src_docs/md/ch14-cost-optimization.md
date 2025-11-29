@@ -84,8 +84,8 @@ def estimate_cost(
     pricing = {
         "gpt-4o": (2.50, 10.00),
         "gpt-4o-mini": (0.15, 0.60),
-        "claude-3-5-sonnet": (3.00, 15.00),
-        "claude-3-haiku": (0.25, 1.25),
+        "claude-4-5-sonnet": (3.00, 15.00),
+        "claude-3-5-haiku": (0.80, 4.00),
     }
 
     input_rate, output_rate = pricing.get(model, (0, 0))
