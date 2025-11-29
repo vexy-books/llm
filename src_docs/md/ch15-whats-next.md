@@ -29,7 +29,7 @@ The wisest stance: stay curious, stay portable, and build on solid foundations. 
 
 ### What's happening
 
-The performance gap between frontier models is shrinking. GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro are interchangeable for most tasks. Open-source models (Llama, Qwen, Mistral) now match last year's commercial leaders.
+The performance gap between frontier models is shrinking. GPT-5, Claude Sonnet 4.5, and Gemini 3 Pro are interchangeable for most tasks. Open-source models (Llama 4, Qwen 3, Mistral Large) now match last year's commercial leaders.
 
 ### What it means
 
@@ -39,15 +39,15 @@ The performance gap between frontier models is shrinking. GPT-4o, Claude 3.5 Son
 
 ### What to watch
 
-- **Llama 4**: Meta's next generation. If quality matches Claude/GPT, everything changes.
-- **Qwen 3**: Alibaba's models are underestimated in the West. Watch for parity.
-- **Open-source tooling**: vLLM, TGI, and other inference servers mature.
+- **Llama 5**: Llama 4 delivered. Meta's pace suggests another leap within a year.
+- **Qwen 4**: Qwen 3 achieved parity. Alibaba isn't slowing down.
+- **Open-source tooling**: vLLM, TGI, and other inference servers keep maturing.
 
 ## Trend 2: small models, big impact
 
 ### What's happening
 
-The industry is splitting: massive models for frontier capabilities, tiny models for deployment. Phi-3, Gemma 2, and Llama 3.2 prove that 3-7B parameter models can handle many production tasks.
+The industry is splitting: massive models for frontier capabilities, tiny models for deployment. Phi-4, Gemma 2, and Llama 4 Scout prove that 7-17B parameter models can handle many production tasks.
 
 ### What it means
 
@@ -75,15 +75,15 @@ The industry is splitting: massive models for frontier capabilities, tiny models
 
 ### What to watch
 
-- **Anthropic's computer use**: General-purpose GUI agents are coming
-- **OpenAI's Operator**: Rumored agent product for automated workflows
-- **Standardization**: MCP or something like it becoming the tool protocol
+- **Anthropic's computer use**: Now shipping. Watch adoption and trust patterns.
+- **OpenAI's Operator**: Launched. Monitor real-world reliability data.
+- **Standardization**: MCP adoption accelerating. Will it become the standard?
 
 ## Trend 4: multimodality matures
 
 ### What's happening
 
-Vision, audio, and video understanding are becoming default capabilities, not premium features. GPT-4o, Gemini, and Claude all handle images natively. Real-time voice is here.
+Vision, audio, and video understanding are becoming default capabilities, not premium features. GPT-5, Gemini 3 Pro, and Claude 4.5 all handle images natively. Real-time voice is here.
 
 ### What it means
 
@@ -129,9 +129,9 @@ Chain-of-thought, tree-of-thought, and extended thinking (like Claude's) show th
 
 ### What to watch
 
-- **OpenAI o1**: Extended reasoning as a product
-- **Test-time scaling**: Mathematical foundations emerging
-- **Constitutional AI**: Self-critique and revision at inference time
+- **OpenAI o3 and beyond**: Extended reasoning keeps improving with each iteration
+- **Test-time scaling**: Mathematical foundations now proven. Watch for efficiency gains.
+- **Constitutional AI**: Self-critique and revision becoming standard in frontier models
 
 ## Trend 7: specialization
 
@@ -147,9 +147,9 @@ General-purpose models are good at everything, great at nothing. Specialized mod
 
 ### What to watch
 
-- **Code models**: Codex, StarCoder, and domain-specific coding assistants
-- **Scientific models**: AlphaFold-style breakthroughs in other domains
-- **Enterprise fine-tuning**: Custom models on proprietary data
+- **Code models**: Codex CLI, Claude Code, and domain-specific coding assistants maturing
+- **Scientific models**: AlphaFold-style breakthroughs expanding to chemistry, materials
+- **Enterprise fine-tuning**: Custom models on proprietary data becoming accessible
 
 ## The anti-trends
 
