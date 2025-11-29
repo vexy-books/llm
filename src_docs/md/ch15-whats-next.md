@@ -259,7 +259,7 @@ from pydantic import BaseModel
 from qdrant_client import QdrantClient
 
 # 3. Keep it simple
-def query_llm(prompt: str, model: str = "gpt-4o-mini") -> str:
+def query_llm(prompt: str, model: str = "gpt-5-mini") -> str:
     """Provider-agnostic LLM call."""
     response = completion(model=model, messages=[{"role": "user", "content": prompt}])
     return response.choices[0].message.content
@@ -291,10 +291,10 @@ class ModelRegistry:
     def __post_init__(self):
         self.models = {
             # Update this quarterly as models change
-            "gpt-4o-mini": {"cost": 0.0015, "quality": 0.85, "speed": "fast"},
-            "claude-3-haiku": {"cost": 0.00075, "quality": 0.83, "speed": "fast"},
-            "gpt-4o": {"cost": 0.025, "quality": 0.95, "speed": "medium"},
-            "claude-3-5-sonnet": {"cost": 0.015, "quality": 0.94, "speed": "medium"},
+            "gpt-5-mini": {"cost": 0.0015, "quality": 0.85, "speed": "fast"},
+            "claude-haiku-4-5": {"cost": 0.00075, "quality": 0.83, "speed": "fast"},
+            "gpt-5": {"cost": 0.025, "quality": 0.95, "speed": "medium"},
+            "claude-sonnet-4-5": {"cost": 0.015, "quality": 0.94, "speed": "medium"},
         }
 
     def best_for_task(self, task: str) -> str:

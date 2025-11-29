@@ -163,7 +163,7 @@ List 5-10 visual characteristics in short phrases. Focus on:
 Return as a JSON array of strings."""
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-5-mini",
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"}
     )
@@ -347,13 +347,13 @@ from openai import OpenAI
 client = OpenAI()
 
 def analyze_font_image(image_path: str) -> str:
-    """Extract font characteristics from an image using GPT-4 Vision."""
+    """Extract font characteristics from an image using GPT-5 Vision."""
 
     with open(image_path, "rb") as f:
         image_data = base64.b64encode(f.read()).decode()
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-5",
         messages=[{
             "role": "user",
             "content": [
@@ -556,7 +556,7 @@ For a production deployment handling 1,000 queries/day:
 | Component | Monthly Cost |
 |-----------|-------------|
 | Embeddings (Gemini) | $0 (free tier) |
-| Vision (GPT-4o, 30% of queries) | ~$50 |
+| Vision (GPT-5, 30% of queries) | ~$50 |
 | Agent (Claude Sonnet) | ~$100 |
 | Vector DB (Qdrant Cloud) | ~$50 |
 | Compute (fly.io) | ~$20 |
@@ -574,7 +574,7 @@ For a production deployment handling 1,000 queries/day:
 
 ### What Didn't
 
-1. **Vision accuracy**: GPT-4o sometimes misidentified fonts, especially for similar-looking alternatives. Always present multiple options.
+1. **Vision accuracy**: GPT-5 sometimes misidentified fonts, especially for similar-looking alternatives. Always present multiple options.
 
 2. **Index freshness**: New fonts required re-embedding. Solution: schedule nightly index updates.
 
@@ -646,7 +646,7 @@ def analyze_image(path: str) -> str:
         data = base64.b64encode(f.read()).decode()
 
     response = OPENAI_CLIENT.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-5",
         messages=[{
             "role": "user",
             "content": [
@@ -697,7 +697,7 @@ def identify_font_simple(image_path: str) -> str:
         image_data = base64.b64encode(f.read()).decode()
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-5",
         messages=[{
             "role": "user",
             "content": [
@@ -717,7 +717,7 @@ result = identify_font_simple("mystery_font.png")
 print(result)
 ```
 
-No database, no embeddings, no agent. GPT-4o alone handles many cases. Costs ~$0.03 per image.
+No database, no embeddings, no agent. GPT-5 alone handles many cases. Costs ~$0.03 per image.
 
 **Production approach**: The full system described in this chapter—embeddings, RAG, and an orchestrating agent—for accuracy and scale.
 
@@ -760,7 +760,7 @@ Building a font identification system taught us:
 
 1. **Embeddings work for fonts**: Text descriptions of visual characteristics are surprisingly effective for similarity search.
 
-2. **Vision + RAG > Vision alone**: Combining GPT-4o's analysis with a curated database beats either approach alone.
+2. **Vision + RAG > Vision alone**: Combining GPT-5's analysis with a curated database beats either approach alone.
 
 3. **Agents add value for ambiguous queries**: When the user says "elegant serif," an agent can ask clarifying questions and iterate.
 

@@ -198,7 +198,7 @@ class ExtractionResult(BaseModel):
 def extract_graph(text: str) -> ExtractionResult:
     """Extract entities and relationships from text using LLM."""
     response = client.beta.chat.completions.parse(
-        model="gpt-4o",
+        model="gpt-5",
         messages=[{
             "role": "system",
             "content": """Extract entities and relationships from text.
@@ -372,7 +372,7 @@ def hyde_search(query: str, vector_db, k: int = 5) -> list:
     """
     # Generate hypothetical answer
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-5-mini",
         messages=[{
             "role": "system",
             "content": "Write a detailed answer to this question as if you had access to perfect documentation."
@@ -431,7 +431,7 @@ def index_document(doc_id: str, chunks: list[str]):
     # Generate summary
     full_text = "\n".join(chunks)
     summary_response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-5-mini",
         messages=[{
             "role": "user",
             "content": f"Summarize in 2-3 sentences:\n{full_text}"
@@ -528,7 +528,7 @@ class QueryClassification(BaseModel):
 def classify_query(query: str) -> QueryClassification:
     """Classify query to determine retrieval strategy."""
     response = client.beta.chat.completions.parse(
-        model="gpt-4o-mini",
+        model="gpt-5-mini",
         messages=[{
             "role": "system",
             "content": """Classify the query type:

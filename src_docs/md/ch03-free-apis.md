@@ -383,7 +383,7 @@ What would this stack cost without free tiers?
 
 | Component | Free Tier | Paid Equivalent |
 |-----------|-----------|-----------------|
-| LLM (3M tokens/day) | $0 | ~$225/mo (GPT-4o) |
+| LLM (3M tokens/day) | $0 | ~$225/mo (GPT-5) |
 | Embeddings (1M/day) | $0 | ~$4.50/mo (OpenAI) |
 | Vector DB (2GB) | $0 | ~$70/mo (Pinecone starter) |
 | **Total** | **$0** | **~$300/mo** |

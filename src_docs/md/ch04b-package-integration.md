@@ -44,7 +44,7 @@ class FontAnalysis(BaseModel):
     recommended_uses: list[str]
     similar_fonts: list[str]
 
-def analyze_font(description: str, model: str = "gpt-4o") -> FontAnalysis:
+def analyze_font(description: str, model: str = "gpt-5") -> FontAnalysis:
     """Analyze a font description and return structured data."""
     return client.chat.completions.create(
         model=model,
@@ -56,9 +56,9 @@ def analyze_font(description: str, model: str = "gpt-4o") -> FontAnalysis:
     )
 
 # Same code works across providers
-result_openai = analyze_font("Helvetica Neue Light", model="gpt-4o")
-result_claude = analyze_font("Helvetica Neue Light", model="claude-3-5-sonnet-20241022")
-result_gemini = analyze_font("Helvetica Neue Light", model="gemini/gemini-1.5-pro")
+result_openai = analyze_font("Helvetica Neue Light", model="gpt-5")
+result_claude = analyze_font("Helvetica Neue Light", model="claude-sonnet-4-5")
+result_gemini = analyze_font("Helvetica Neue Light", model="gemini/gemini-3-pro")
 
 # All return FontAnalysis objects with identical structure
 print(result_openai.classification)  # "sans-serif"
@@ -201,14 +201,14 @@ data_scientist = Agent(
     goal="Analyze data and create visualizations",
     backstory="Expert in Python, pandas, and matplotlib.",
     tools=[execute_python],
-    llm="gpt-4o"
+    llm="gpt-5"
 )
 
 code_reviewer = Agent(
     role="Code Reviewer",
     goal="Review code for correctness and security",
     backstory="Senior engineer focused on code quality.",
-    llm="gpt-4o"
+    llm="gpt-5"
 )
 
 # Define tasks
@@ -356,16 +356,16 @@ results = hybrid_search("programming font with ligatures")
 
 **Use case**: Testing prompts across multiple providers automatically.
 
-**The problem**: You've written a prompt that works great on GPT-4. Does it work on Claude? Gemini? Llama? Testing manually is tedious.
+**The problem**: You've written a prompt that works great on GPT-5. Does it work on Claude? Gemini? Llama? Testing manually is tedious.
 
 **The solution**: Use LiteLLM as the model backend, Promptfoo as the test harness.
 
 ```yaml
 # promptfoo.yaml
 providers:
-  - id: litellm:gpt-4o
-  - id: litellm:claude-3-5-sonnet-20241022
-  - id: litellm:gemini/gemini-1.5-pro
+  - id: litellm:gpt-5
+  - id: litellm:claude-sonnet-4-5
+  - id: litellm:gemini/gemini-3-pro
   - id: litellm:groq/llama-3.1-70b-versatile
 
 prompts:
@@ -408,7 +408,7 @@ promptfoo eval
 
 # Output:
 # ┌─────────────────────────────┬────────┬────────┬────────┬────────┐
-# │ Test                        │ GPT-4o │ Claude │ Gemini │ Llama  │
+# │ Test                        │ GPT-5  │ Claude │ Gemini │ Llama  │
 # ├─────────────────────────────┼────────┼────────┼────────┼────────┤
 # │ Helvetica classification    │ PASS   │ PASS   │ PASS   │ PASS   │
 # │ Garamond classification     │ PASS   │ PASS   │ PASS   │ FAIL   │

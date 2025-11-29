@@ -146,7 +146,7 @@ Elon Musk's xAI built Grok specifically for real-time information. Integrated wi
 **The Models**
 
 - **Grok-4.1**: Released November 2025. Latest incremental update with improved capabilities.
-- **Grok-4**: The standard model. Competitive with GPT-4o on benchmarks.
+- **Grok-4**: The standard model. Competitive with GPT-5 on benchmarks.
 - **Grok-3**: Released February 2025. Trained with 10x more compute using the 200,000 GPU Colossus data center.
 
 **Subscription Tiers**
@@ -274,8 +274,8 @@ def smart_route(query: str, complexity: str = "simple") -> str:
 
     # Fallback chain
     fallbacks = [
-        "gpt-4o",                    # OpenAI fallback
-        "gemini/gemini-2.5-pro",     # Google fallback
+        "gpt-5",                     # OpenAI fallback
+        "gemini/gemini-3-pro",       # Google fallback
     ]
 
     try:

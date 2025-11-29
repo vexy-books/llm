@@ -132,7 +132,7 @@ def embed_openai(texts: list[str], model: str = "text-embedding-3-small") -> lis
 - `text-embedding-3-small`: 1536 dims, $0.02/M, 62.3 MTEB
 - `text-embedding-3-large`: 3072 dims, $0.13/M, 64.6 MTEB
 
-**When OpenAI makes sense**: You're already paying for GPT-4o and want one vendor.
+**When OpenAI makes sense**: You're already paying for GPT-5 and want one vendor.
 
 **When to avoid**: Cost matters. Better options exist for less.
 

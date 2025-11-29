@@ -93,7 +93,7 @@ def generate_triplets(documents: list[str], n_triplets: int = 1000) -> list[Trai
 
     for doc in documents[:n_triplets]:
         response = client.beta.chat.completions.parse(
-            model="gpt-4o-mini",
+            model="gpt-5-mini",
             messages=[{
                 "role": "system",
                 "content": """Generate a training triplet for semantic similarity.

@@ -133,7 +133,7 @@ gemini @docs/ "Summarize all API changes since v1.0"
 gemini @screenshot.png "What UI framework is this?"
 
 # Provider override
-gemini --provider openai/gpt-4o "Compare approaches"
+gemini --provider openai/gpt-5 "Compare approaches"
 ```
 
 **When Gemini CLI shines**: You need current information, huge context windows, multimodal input, or free tier.

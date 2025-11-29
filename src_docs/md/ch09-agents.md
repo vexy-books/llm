@@ -9,7 +9,7 @@
 
 An LLM that only answers questions is a fancy search engine. An agent decides what to do next.
 
-The difference matters. Ask GPT-4 "What's the weather?" and it tells you it can't check. Give GPT-4 access to a weather API as a tool, and it calls the API, parses the result, and answers with live data. Same model. Different architecture.
+The difference matters. Ask GPT-5 "What's the weather?" and it tells you it can't check. Give GPT-5 access to a weather API as a tool, and it calls the API, parses the result, and answers with live data. Same model. Different architecture.
 
 Agents combine three capabilities:
 
@@ -139,13 +139,13 @@ from autogen import AssistantAgent, UserProxyAgent
 researcher = AssistantAgent(
     name="researcher",
     system_message="You research font history and typographic trends.",
-    llm_config={"model": "gpt-4o"}
+    llm_config={"model": "gpt-5"}
 )
 
 analyst = AssistantAgent(
     name="analyst",
     system_message="You analyze font metrics and technical specifications.",
-    llm_config={"model": "gpt-4o"}
+    llm_config={"model": "gpt-5"}
 )
 
 user_proxy = UserProxyAgent(
@@ -182,14 +182,14 @@ type_historian = Agent(
     role="Typography Historian",
     goal="Research typeface origins and evolution",
     backstory="Expert in typographic history from Gutenberg to digital.",
-    llm="gpt-4o"
+    llm="gpt-5"
 )
 
 font_analyst = Agent(
     role="Font Analyst",
     goal="Analyze font files for technical characteristics",
     backstory="Specializes in OpenType features and font engineering.",
-    llm="gpt-4o"
+    llm="gpt-5"
 )
 
 # Define tasks

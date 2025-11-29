@@ -825,8 +825,8 @@ Multi-agent systems multiply API costs.
 class CostTracker:
     PRICING = {
         "claude-sonnet-4": {"input": 3.0, "output": 15.0},  # per 1M tokens
-        "gpt-4o": {"input": 2.5, "output": 10.0},
-        "gpt-4o-mini": {"input": 0.15, "output": 0.60},
+        "gpt-5": {"input": 2.5, "output": 10.0},
+        "gpt-5-mini": {"input": 0.15, "output": 0.60},
     }
 
     def __init__(self):
