@@ -15,6 +15,9 @@
 
 ## Recent Updates
 
+- [x] Updated ch05 Codex CLI with Nov 2025 features (GPT-5.1-Codex-Max, approval modes)
+- [x] Updated ch05 Claude Code models to Sonnet/Opus 4.5
+- [x] Verified ch14 caching section is comprehensive (semantic cache, batching, provider arbitrage)
 - [x] Updated ch06 MCP examples to use FastMCP (modern API)
 - [x] Fixed ch14 pricing code: claude-3-haiku → claude-3-5-haiku with $0.80/$4.00
 - [x] Updated ch02 provider info with Nov 2025 releases

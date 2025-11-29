@@ -108,7 +108,7 @@ claude @src/auth/*.ts "Document these modules"
 
 **Language**: TypeScript (npm package)
 **Open Source**: Yes
-**Models**: Gemini 2.5 Pro, Gemini 2.5 Flash
+**Models**: Gemini 3 Pro, Gemini 2.5 Flash
 **Bundled With**: Free tier (1,000 req/day), Code Assist Standard ($19/mo), Enterprise ($45/mo)
 
 Google's dark horse. Best free tier, built-in web search, million-token context.

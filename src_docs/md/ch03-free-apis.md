@@ -11,7 +11,7 @@ The kerning project started as a weekend experiment. I had an idea: could an LLM
 
 Free tiers exist for a reason. Providers want you hooked before you pay. That's fine—we can use their marketing strategy to bootstrap real projects.
 
-This chapter maps every meaningful free tier as of October 2025. Spoiler: you can build production-quality prototypes without spending a cent.
+This chapter maps every meaningful free tier as of late 2025. Spoiler: you can build production-quality prototypes without spending a cent.
 
 ## Imagine...
 
@@ -34,7 +34,7 @@ It's not cheating. It's using the system exactly as designed—just more creativ
 | Model | Daily Limit | Context | Commercial Use |
 |-------|-------------|---------|----------------|
 | Gemini 2.5 Flash | 250 RPD | 1M tokens | Yes |
-| Gemini 2.5 Pro | 3M TPD | 1M tokens | Yes |
+| Gemini 3 Pro | 3M TPD | 1M tokens | Yes |
 
 This is the best free tier in the industry. Three million tokens per day of Pro-level capability with million-token context. Commercial use allowed. Data used for training by default (disable in settings).
 

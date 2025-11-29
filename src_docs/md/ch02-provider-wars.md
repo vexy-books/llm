@@ -100,7 +100,7 @@ Google's advantage is infrastructure and data. They process more information tha
 
 **The Models**
 
-- **Gemini 2.5 Pro**: The flagship. 1M token context (2M coming soon), native multimodal (text, images, video, audio, code repositories). Tops the LMArena leaderboard. 63.8% on SWE-bench Verified. $1.25-2.50/$10-15 per million tokens depending on context length.
+- **Gemini 3 Pro**: The flagship (Nov 2025). 1M token context, native multimodal (text, images, video, audio, code repositories). 35% more accurate than 2.5 Pro on software engineering tasks. $1.25-2.50/$10-15 per million tokens depending on context length.
 - **Gemini 2.5 Flash**: Speed-optimized variant. Same capabilities, faster responses.
 - **Gemini 2.0 Flash-Lite**: Budget option for high-volume workloads.
 
@@ -108,7 +108,7 @@ Google's advantage is infrastructure and data. They process more information tha
 
 | Plan | Price/month | What You Get |
 |------|-------------|--------------|
-| Free | $0 | Limited Gemini 2.5 Pro access |
+| Free | $0 | Limited Gemini 3 Pro access |
 | AI Pro | $20 | 250 prompts/day, 250 Nano Banana Pro images, 2TB storage |
 | AI Ultra | ~$250 | Max limits, 30TB storage, YouTube Premium, Veo 3 video, Project Mariner browser automation |
 
@@ -300,9 +300,9 @@ The key insight: no single provider wins on every dimension. Architect for resil
 | **Best Free Tier** | Google Gemini | Perplexity |
 | **Best Reasoning** | Claude Opus 4.5 | GPT-5 Pro |
 | **Best Speed** | Cerebras | Groq |
-| **Best Multimodal** | Gemini 2.5 Pro | GPT-5 |
+| **Best Multimodal** | Gemini 3 Pro | GPT-5 |
 | **Best Real-Time** | Grok-4.1 | Perplexity |
-| **Best Coding** | Claude Sonnet 4.5 (77.2% SWE-bench) | Gemini 2.5 Pro (63.8%) |
+| **Best Coding** | Claude Sonnet 4.5 (77.2% SWE-bench) | Gemini 3 Pro |
 | **Best Value** | Featherless ($25 unlimited) | Chutes ($20/5k/day) |
 | **Best Enterprise** | OpenAI/Azure | Google Cloud |
 

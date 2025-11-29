@@ -95,7 +95,7 @@ Five companies control most of the frontier model capacity:
 
 **Anthropic** prioritizes safety and extended thinking. Claude 4 Opus excels at complex reasoning tasks that require multiple steps. Their Claude Code CLI integrates directly into coding workflows. The Max plans ($100-200/month) unlock access to Opus for users who need the best reasoning available.
 
-**Google** leverages multimodality and scale. Gemini 2.5 Pro handles text, images, video, and audio natively. The free tier through AI Studio offers 1,000 CLI requests per day with million-token context. For most developers, that's enough.
+**Google** leverages multimodality and scale. Gemini 3 Pro handles text, images, video, and audio natively. The free tier through AI Studio offers 1,000 CLI requests per day with million-token context. For most developers, that's enough.
 
 **xAI** (Grok) offers real-time information through its X/Twitter integration. The $300/month SuperGrok plan targets users who need current data and high throughput.
 
