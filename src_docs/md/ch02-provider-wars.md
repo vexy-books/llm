@@ -102,7 +102,7 @@ Google's advantage is infrastructure and data. They process more information tha
 
 - **Gemini 3 Pro**: The flagship (Nov 2025). 1M token context, native multimodal (text, images, video, audio, code repositories). 35% more accurate than 2.5 Pro on software engineering tasks. $1.25-2.50/$10-15 per million tokens depending on context length.
 - **Gemini 2.5 Flash**: Speed-optimized variant. Same capabilities, faster responses.
-- **Gemini 2.0 Flash-Lite**: Budget option for high-volume workloads.
+- **Gemini 2.5 Flash-Lite**: Budget option for high-volume workloads.
 
 **Subscription Tiers (Google AI)**
 

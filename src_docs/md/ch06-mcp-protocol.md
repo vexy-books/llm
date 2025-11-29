@@ -62,7 +62,7 @@ A filesystem MCP server runs as a separate process. If it crashes, the LLM keeps
 Functions that the LLM can invoke. The LLM receives the function signature (name, parameters, description), decides when to call it, and receives the result.
 
 ```python
-@server.tool("read_file")
+@mcp.tool
 async def read_file(path: str) -> str:
     """Read contents of a file at the given path."""
     with open(path) as f:
@@ -513,8 +513,7 @@ Five minutes from zero to working. Claude can now browse your files, read conten
 
 ```python
 # font_mcp_server.py - Production font analysis server
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
+from fastmcp import FastMCP
 from pydantic import BaseModel, Field
 from pathlib import Path
 from fontTools.ttLib import TTFont
@@ -538,7 +537,7 @@ class FontAnalysisResult(BaseModel):
     quality_score: float = Field(ge=0, le=1)
     issues: list[str] = []
 
-server = Server("font-analyzer-pro")
+mcp = FastMCP("font-analyzer-pro")
 
 def analyze_font_file(path: Path) -> FontAnalysisResult:
     """Deep analysis of a font file."""
@@ -599,8 +598,8 @@ def classify_font(font: TTFont) -> str:
             return "script"
     return "unknown"
 
-@server.tool("analyze_font")
-async def analyze_font_tool(path: str) -> str:
+@mcp.tool
+async def analyze_font(path: str) -> str:
     """Analyze a font file with full metadata extraction and classification."""
     font_path = Path(path).expanduser()
 
@@ -613,7 +612,7 @@ async def analyze_font_tool(path: str) -> str:
     result = analyze_font_file(font_path)
     return result.model_dump_json(indent=2)
 
-@server.tool("batch_analyze")
+@mcp.tool
 async def batch_analyze(directory: str, pattern: str = "*.[ot]tf") -> str:
     """Analyze all fonts in a directory matching pattern."""
     dir_path = Path(directory).expanduser()
@@ -628,13 +627,8 @@ async def batch_analyze(directory: str, pattern: str = "*.[ot]tf") -> str:
 
     return json.dumps(results, indent=2)
 
-async def main():
-    async with stdio_server() as (read_stream, write_stream):
-        await server.run(read_stream, write_stream, server.create_initialization_options())
-
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    mcp.run()
 ```
 
 The simple approach gets Claude reading files in minutes. The production approach gives you validated, typed responses with domain-specific analysis. Start simple; build custom servers when you hit the limits of generic tools.

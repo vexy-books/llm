@@ -15,6 +15,11 @@
 
 ## Recent Updates
 
+- [x] Updated ch06 MCP server examples to FastMCP 2.0 style (`from fastmcp import FastMCP`, `@mcp.tool`, `mcp.run()`)
+- [x] Updated ch12 low-level MCP SDK imports: `from mcp.server.lowlevel import Server`, `import mcp.server.stdio`
+- [x] Fixed ch14 Gemini model names: Gemini 2.0 Pro/Flash → Gemini 3 Pro / Gemini 2.5 Flash with current pricing
+- [x] Fixed ch02 Gemini 2.0 Flash-Lite → Gemini 2.5 Flash-Lite
+- [x] Verified ch08 embedding model names and pricing are current (gemini-embedding-001, voyage-3.5-lite, text-embedding-3-small)
 - [x] Fixed ch13/ch14 model names: claude-3-haiku → claude-3-5-haiku, gpt-4o-mini → gpt-5-mini, gemini-1.5-flash → gemini-2.5-flash
 - [x] Fixed remaining PydanticAI `result.data` → `result.output` across 6 chapters (ch04, ch04b, ch09, ch09b, ch10, ch12b)
 - [x] Updated GPT-4/GPT-4o references to GPT-5/GPT-5-mini across 11 chapters (ch02, ch03, ch04b, ch05, ch07b, ch08, ch08b, ch09, ch09b, ch10, ch15)

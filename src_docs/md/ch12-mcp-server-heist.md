@@ -59,8 +59,8 @@ Start with the MCP boilerplate.
 
 ```python
 # fontlab_server.py
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
+from mcp.server.lowlevel import Server
+import mcp.server.stdio
 from pathlib import Path
 import json
 
@@ -98,7 +98,7 @@ async def list_tools():
     ]
 
 async def main():
-    async with stdio_server() as (read_stream, write_stream):
+    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
         await server.run(
             read_stream,
             write_stream,
@@ -808,8 +808,8 @@ Compare to manual work: 1,000 operations × 20 minutes × $50/hour = **$16,667**
 
 ```python
 # fontlab_server.py - Complete implementation
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
+from mcp.server.lowlevel import Server
+import mcp.server.stdio
 from fontTools.ttLib import TTFont
 from pathlib import Path
 import json
@@ -826,7 +826,7 @@ WORKSPACE.mkdir(exist_ok=True)
 # (Full implementations above)
 
 async def main():
-    async with stdio_server() as (read_stream, write_stream):
+    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
         await server.run(
             read_stream,
             write_stream,

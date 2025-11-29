@@ -11,7 +11,7 @@ LLM costs scale with usage. A proof-of-concept that costs $5/month can become $5
 
 This chapter covers practical strategies to reduce costs without sacrificing quality. We'll cover model selection, caching, prompt optimization, and architectural patterns that keep bills manageable.
 
-> **2025 Update**: API pricing continues to evolve. Claude 3.5 Haiku runs at $0.80/$4.00 per 1M tokens (input/output), while Claude 4.5 Sonnet is $3/$15. GPT-4o Mini at $0.60/$2.40 per 1M remains excellent value. Gemini 2.0 Flash is cheapest at $0.10/$0.40 per 1M tokens. Batch processing discounts (50% off at Anthropic and OpenAI) make non-urgent workloads much cheaper. The optimization strategies below remain valid.
+> **2025 Update**: API pricing continues to evolve. Claude 3.5 Haiku runs at $0.80/$4.00 per 1M tokens (input/output), while Claude 4.5 Sonnet is $3/$15. GPT-4o Mini at $0.60/$2.40 per 1M remains excellent value. Gemini 2.5 Flash is now cheapest at $0.15/$3.50 per 1M tokens. Batch processing discounts (50% off at Anthropic and OpenAI) make non-urgent workloads much cheaper. The optimization strategies below remain valid.
 
 ## Imagine...
 
@@ -37,8 +37,8 @@ Before optimizing, know where money goes.
 | OpenAI | GPT-4o Mini | $0.60 | $2.40 |
 | Anthropic | Claude 4.5 Sonnet | $3.00 | $15.00 |
 | Anthropic | Claude 3.5 Haiku | $0.80 | $4.00 |
-| Google | Gemini 2.0 Pro | $2.50 | $10.00 |
-| Google | Gemini 2.0 Flash | $0.10 | $0.40 |
+| Google | Gemini 3 Pro | $2.00 | $12.00 |
+| Google | Gemini 2.5 Flash | $0.15 | $3.50 |
 
 **Key insight**: Output costs 3-5x more than input. Verbose responses drain budgets.
 
