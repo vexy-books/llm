@@ -2,7 +2,9 @@
 
 ## Current Status
 
-**2nd Edition**: COMPLETE - Pushed to main (commit 0a9026c)
+**2nd Edition**: COMPLETE
+**Live site**: https://vexy.boo/llm/
+**Latest commit**: a27fefe
 
 ## Book Statistics
 
@@ -12,16 +14,14 @@
 | 2nd Edition (new) | 9 | ~28,000 |
 | **Total** | **24** | **~65,000** |
 
-## Completed This Session
+## Recent Updates
 
-- [x] Added dual examples ("Getting started: two approaches") to all 15 chapters
-- [x] Verified zensical.toml configuration
-- [x] Spot-checked 3 code examples (ch04, ch14, ch15) - all pass syntax
-- [x] Committed and pushed to main for GitHub Pages deployment
+- [x] Updated API pricing to Nov 2025 actuals (ch14)
+- [x] Added Rust ecosystem section to ch04 (per 3rd edition plan)
+- [x] GitHub Pages deployed successfully
 
 ## Next Actions
 
-1. Check GitHub Actions workflow status for docs deployment
-2. Test code examples more thoroughly (imports require API keys)
-3. Cross-reference accuracy check
-4. Plan 3rd Edition improvements (per PLAN.md)
+1. Test code examples more thoroughly (imports require API keys)
+2. Cross-reference accuracy check
+3. Continue 3rd Edition improvements (JS/TS ecosystem, more Rust)
