@@ -453,9 +453,9 @@ def get_cheapest_provider(task: str) -> str:
     providers = {
         "groq/llama-3.1-70b": 0.80,      # Fast and cheap
         "together/meta-llama/llama-3.1-70b": 0.90,
-        "gpt-4o-mini": 0.375,
-        "gemini/gemini-1.5-flash": 0.19,
-        "claude-3-haiku": 0.75,
+        "gpt-5-mini": 0.375,
+        "gemini/gemini-2.5-flash": 0.19,
+        "claude-3-5-haiku": 0.75,
     }
 
     # For simple tasks, cheapest wins

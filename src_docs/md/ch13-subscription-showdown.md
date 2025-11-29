@@ -473,7 +473,7 @@ interactive:
 automated:
   provider: anthropic-api  # Claude Haiku for batch work
   budget_cap: $10/month
-  model: claude-3-haiku
+  model: claude-3-5-haiku
 
 # Result: Great AI access for ~$30/month instead of $60+
 ```
