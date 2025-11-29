@@ -118,7 +118,7 @@ async def get_font_metrics(path: str) -> dict:
     }
 
 result = await agent.run("Analyze Garamond.ttf for body text suitability")
-print(result.data)  # FontAnalysis object with type safety
+print(result.output)  # FontAnalysis object with type safety
 ```
 
 **Why PydanticAI wins:**
@@ -705,6 +705,112 @@ def manage_context(messages: list[dict], max_tokens: int = 8000) -> list[dict]:
     return messages
 ```
 
+## Debugging agents in practice
+
+When agents misbehave, you need visibility. Here's how to instrument them.
+
+### Logging every step
+
+```python
+import logging
+from pydantic_ai import Agent
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger("agent")
+
+agent = Agent("claude-sonnet-4", system_prompt="You analyze fonts.")
+
+@agent.tool
+async def analyze_font(path: str) -> str:
+    """Analyze a font file."""
+    logger.info(f"Tool called: analyze_font({path})")
+    try:
+        result = do_analysis(path)
+        logger.info(f"Tool result: {result[:100]}...")
+        return result
+    except Exception as e:
+        logger.error(f"Tool failed: {e}")
+        raise
+
+async def run_with_logging(query: str):
+    logger.info(f"Starting: {query}")
+    result = await agent.run(query)
+    logger.info(f"Final output: {result.output}")
+    return result
+```
+
+### Inspecting message history
+
+PydanticAI exposes the full conversation:
+
+```python
+result = await agent.run("Analyze Garamond.ttf")
+
+# See every message exchanged
+for msg in result.all_messages():
+    print(f"{msg.kind}: {msg}")
+
+# Check which tools were called
+for msg in result.all_messages():
+    if hasattr(msg, 'parts'):
+        for part in msg.parts:
+            if hasattr(part, 'tool_name'):
+                print(f"Called: {part.tool_name}({part.args})")
+```
+
+### Cost tracking
+
+Every run returns usage statistics:
+
+```python
+result = await agent.run("Compare Arial and Helvetica")
+
+usage = result.usage()
+print(f"Input tokens: {usage.input_tokens}")
+print(f"Output tokens: {usage.output_tokens}")
+print(f"Requests: {usage.requests}")
+
+# Estimate cost (Claude Sonnet pricing)
+input_cost = usage.input_tokens * 0.003 / 1000
+output_cost = usage.output_tokens * 0.015 / 1000
+print(f"Estimated cost: ${input_cost + output_cost:.4f}")
+```
+
+### Replay and reproduce
+
+Save message history to reproduce issues:
+
+```python
+import json
+
+# After a problematic run
+result = await agent.run("Problematic query here")
+
+# Save for debugging
+with open("debug_messages.json", "w") as f:
+    messages = [msg.model_dump() for msg in result.all_messages()]
+    json.dump(messages, f, indent=2, default=str)
+
+# Later, inspect what happened
+with open("debug_messages.json") as f:
+    messages = json.load(f)
+    for msg in messages:
+        print(f"{msg['kind']}: {msg.get('content', msg.get('parts', ''))[:200]}")
+```
+
+### The debugging checklist
+
+When an agent fails:
+
+1. **Check the prompt** — Did the system prompt set clear expectations?
+2. **Check tool descriptions** — Are they unambiguous? Do they include examples?
+3. **Check tool outputs** — Did tools return what the agent expected?
+4. **Check iteration count** — Did it hit the loop limit?
+5. **Check token usage** — Did context overflow?
+6. **Check the model** — Try a more capable model to see if the task is too hard
+
+Most agent bugs come from unclear tool descriptions or insufficient context. Fix those first.
+
 ## The minimal agent template
 
 Here's a production-ready starting point:
@@ -753,8 +859,8 @@ If stuck, try a different approach rather than repeating failed actions."""
 
         try:
             result = await self.agent.run(query)
-            self.memory.append({"role": "assistant", "content": result.data.answer})
-            return result.data
+            self.memory.append({"role": "assistant", "content": result.output.answer})
+            return result.output
         except Exception as e:
             return AgentResult(
                 answer=f"Error: {str(e)}",
@@ -814,7 +920,7 @@ async def search_fonts(query: str) -> str:
     return f"Found fonts matching '{query}': Garamond, Georgia, Palatino"
 
 result = await agent.run("Find serif fonts good for book body text")
-print(result.data)
+print(result.output)
 ```
 
 Single agent, single tool, immediate result. This handles most real-world use cases.
