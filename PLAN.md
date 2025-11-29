@@ -248,15 +248,21 @@ Examples:
 
 **Total estimated**: ~140 pages of content
 
-## Milestones
+## Build & Deploy
 
-1. **Foundation** - README, PLAN, .claude scaffolding (current)
-2. **Survey** - Read all TLDRs, create summaries
-3. **Structure** - Finalize TOC, assign sources to chapters
-4. **Draft 1** - Write all chapters (rough)
-5. **Revision** - Apply prose rules, add narrative
-6. **Polish** - Code examples tested, images placed
-7. **Deploy** - Zensical build, GitHub Pages live
+**Local build**:
+```bash
+./build.sh  # or: zensical build --clean
+```
+
+**Preview**:
+```bash
+zensical serve
+```
+
+**Production**: GitHub Actions (`.github/workflows/docs.yml`) builds on push to main and deploys to GitHub Pages.
+
+**Live site**: https://vexy.boo/llm/
 
 # 2nd Edition Plan
 
